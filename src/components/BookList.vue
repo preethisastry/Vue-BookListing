@@ -5,6 +5,7 @@
             <book-item v-for = "book in books" :book = "book"></book-item>
                        
         </ul>
+        <hr>
         <book-form @addBook='appendBook'></book-form>
     </div>
 </template>
@@ -16,23 +17,24 @@
         name: 'BookList',
         data() {
             return {
-                title:'All Books',
+                title:'Books To Read',
             
             books: [
-                {title:'Self-Reliance', author: 'Ralph Waldo Emerson'},
-                {title:'American Gods', author: 'Neil Gaiman'},
-                {title:'Amusing Ourselves to Death', author: 'Neil Postman'},
-                {title:'Harry Potter Series', author: 'JK Rowling'}
+                { title:'Self-Reliance', author: 'Ralph Waldo Emerson' },
+                { title:'American Gods', author: 'Neil Gaiman' },
+                { title:'Amusing Ourselves to Death', author: 'Neil Postman' },
+                { title:'Harry Potter Series', author: 'JK Rowling' }
 
-            ],
+            ]
             };
          },
         components: {
-            BookItem
+            BookItem,
+            BookForm
         },
         methods:{
             appendBook(bookTitle, bookAuthor){
-                this.books.push({title:bookTitle, author:bookAuthor});
+                this.books.push({ title:bookTitle, author:bookAuthor });
             }
         }
     };
